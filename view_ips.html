@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>IP ผู้ใช้งาน | Wack Shop</title>
+    <style>
+        body {
+            background: #1e272e;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .log-box {
+            background-color: #2f3640;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .log-line {
+            margin: 5px 0;
+            font-family: monospace;
+        }
+        .btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e17055;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <h1>📋 รายชื่อ IP ผู้เข้าชม</h1>
+    <div class="log-box">
+        {% for log in logs %}
+            <div class="log-line">{{ log.strip() }}</div>
+        {% endfor %}
+    </div>
+    <div style="text-align:center;">
+        <a class="btn" href="{{ url_for('admin') }}">⬅ กลับหน้าแอดมิน</a>
+    </div>
+</body>
+</html>
